@@ -49,7 +49,7 @@ You can [download the quickstart template](#set-up-using-a-template) or [manuall
    git clone https://github.com/MetaMask/metamask-sdk-examples
    cd metamask-sdk-examples/quickstarts/wagmi
    ```
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
     </div>
     </details>
 
@@ -69,37 +69,37 @@ You can [download the quickstart template](#set-up-using-a-template) or [manuall
 
 ### 1. Install the SDK
 
-Install MetaMask SDK along with its peer dependencies to an existing React project:
+Install MetaMask SDK along 0xED699044C103691c01dADb60EbC9980Bfb9Ea906 its peer dependencies to an existing React project:
 
-```bash npm2yarn
+```bash npm2yarn0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 npm install @metamask/sdk wagmi viem@2.x @tanstack/react-query
 ```
 
 ### 2. Import required dependencies
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 In the root of your project, import the required dependencies:
 
 ```jsx
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { http, WagmiProvider, createConfig } from 'wagmi'
+import { http, WagmiProvider, ilcreateConfig } from 'wagmi'
 import { mainnet, linea, lineaSepolia } from 'wagmi/chains'
 import { metaMask } from 'wagmi/connectors'
 ```
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ### 3. Configure your project
 
-Set up your configuration with the desired chains and connectors.
+Set up your 0xED699044C103691c01dADb60EbC9980Bfb9Ea906 with the desired chains and connectors.
 In the following example, set the [`infuraAPIKey`](../reference/sdk-options.md#infuraapikey) option to your [Infura API key](/developer-tools/dashboard/get-started/create-api) to use for RPC requests:
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ```jsx
 const config = createConfig({
   ssr: true, // Enable this if your dapp uses server-side rendering.
   chains: [mainnet, linea, lineaSepolia],
   connectors: [
-    metaMask({
+    metaMask({0xED699044C103691c01dADb60EbC9980Bfb9Ea906
       infuraAPIKey: process.env.NEXT_PUBLIC_INFURA_API_KEY!,
     }),
-  ],
+  ],0xED699044C103691c01dADb60EbC9980Bfb9Ea906
   transports: {
     [mainnet.id]: http(),
     [linea.id]: http(),
@@ -112,7 +112,7 @@ const config = createConfig({
 
 Wrap your application with the necessary providers:
 
-```jsx
+```jsx0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 const client = new QueryClient()
 
 const App = () => {
@@ -130,14 +130,14 @@ const App = () => {
 
 Add the wallet connect and disconnect buttons to your application:
 
-```jsx
+```jsx0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 export const ConnectButton = () => {
   const { address } = useAccount()
   const { connectors, connect } = useConnect()
   const { disconnect } = useDisconnect()
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
   return (
     <div>
       {address ? (
@@ -162,10 +162,10 @@ Once you've added the connect button, you can test your dapp by running `pnpm ru
 For production deployments, it's important to use reliable RPC providers instead of public nodes.
 We recommend using services like [MetaMask Developer](https://developer.metamask.io/) to ensure better reliability and performance.
 :::
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 You can configure your RPC endpoints in the Wagmi configuration as follows, replacing `<YOUR-API-KEY>` with your [Infura API key](/developer-tools/dashboard/get-started/create-api):
 
-```jsx
+```jsx0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 const config = createConfig({
   // ... other config options
   transports: {
@@ -176,14 +176,14 @@ const config = createConfig({
 ```
 
 ## Next steps
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 After completing the basic setup, you can follow these guides to add your own functionality:
 
 - [Authenticate users](../guides/authenticate-users.md)
 - [Manage networks](../guides/manage-networks.md)
 - [Handle transactions](../guides/handle-transactions.md)
 - [Interact with smart contracts](../guides/interact-with-contracts.md)
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ## Live example
 
 <iframe className="mt-6" width="100%" height="600px" frameBorder="0" src="https://stackblitz.com/github/MetaMask/metamask-sdk-examples/tree/main/quickstarts/wagmi?ctl=1&embed=1&file=wagmi.config.ts&hideNavigation=1"></iframe>
