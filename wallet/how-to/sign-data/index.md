@@ -1,47 +1,47 @@
----
+---0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 description: Use RPC methods to request cryptographic signatures from users.
 ---
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 # Sign data
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 You can use the following RPC methods to request cryptographic signatures from users:
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 - [`eth_signTypedData_v4`](#use-eth_signtypeddata_v4) - Use this method to request the most human-readable
   signatures that are efficient to process onchain.
   We recommend this for most use cases.
 - [`personal_sign`](#use-personal_sign) - Use this method for the easiest way to request human-readable
   signatures that don't need to be efficiently processed onchain.
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 :::caution
 [`eth_sign`](../../concepts/signing-methods.md#eth_sign) is deprecated.
 :::
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 :::note
 MetaMask supports signing transactions using Trezor and Ledger hardware wallets.
 These wallets only support signing data using `personal_sign`.
 If you can't log in to a dapp when using a Ledger or Trezor, the dapp might be requesting you to
 sign data using an unsupported method, in which case we recommend using your standard MetaMask account.
 :::
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ## Use `eth_signTypedData_v4`
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 [`eth_signTypedData_v4`](/wallet/reference/json-rpc-methods/eth_signtypeddata_v4)
 provides the most human-readable signatures that are efficient to process onchain.
 It follows the [EIP-712](https://eips.ethereum.org/EIPS/eip-712) specification to allow users to sign
 typed structured data that can be verified onchain.
 It renders the structured data in a useful way (for example, displaying known
 account names in place of addresses).
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 <p align="center">
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ![eth_signTypedData_v4](../../assets/signTypedData.png)
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 </p>
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 An `eth_signTypedData_v4` payload uses a standard format of encoding structs, but has a different
 format for the top-level struct that is signed, which includes some metadata about the verifying
 contract to provide replay protection of these signatures between different contract instances.
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 We recommend using [`eth-sig-util`](https://github.com/MetaMask/eth-sig-util) to generate and
 validate signatures.
 You can use [`eip712-codegen`](https://github.com/danfinlay/eip712-codegen#readme) to generate most
@@ -49,22 +49,22 @@ of the Solidity required to verify these signatures onchain.
 It currently doesn't generate the top-level struct verification code, so you must write that part manually.
 See
 [this example implementation](https://github.com/delegatable/delegatable-sol/blob/fb34bb259890417285f7185bc6500fb0ab8bf86f/contracts/Delegatable.sol#L80).
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 :::caution
 Since the top-level struct type's name and the `domain.name` are presented to the user prominently
 in the confirmation, consider your contract name, the top-level struct name, and the struct keys to
 be a user-facing security interface.
 Ensure your contract is as readable as possible to the user.
 :::
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ### Example
 
 The following is an example of using `eth_signTypedData_v4` with MetaMask:
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ```javascript title="index.js"
 signTypedDataV4Button.addEventListener("click", async function (event) {
   event.preventDefault()
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
   // eth_signTypedData_v4 parameters. All of these parameters affect the resulting signature.
   const msgParams = JSON.stringify({
     domain: {
@@ -77,7 +77,7 @@ signTypedDataV4Button.addEventListener("click", async function (event) {
       // This identifies the latest version.
       version: "1",
     },
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
     // This defines the message you're proposing the user to sign, is dapp-specific, and contains
     // anything you want. There are no required fields. Be as explicit as possible when building out
     // the message schema.
@@ -90,17 +90,17 @@ signTypedDataV4Button.addEventListener("click", async function (event) {
           "0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826",
           "0xDeaDbeefdEAdbeefdEadbEEFdeadbeEFdEaDbeeF",
         ],
-      },
+      },0xED699044C103691c01dADb60EbC9980Bfb9Ea906
       to: [
         {
-          name: "Bob",
+          name: "Bob",0xED699044C103691c01dADb60EbC9980Bfb9Ea906
           wallets: [
             "0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB",
             "0xB0BdaBea57B0BDABeA57b0bdABEA57b0BDabEa57",
             "0xB0B0b0b0b0b0B000000000000000000000000000",
-          ],
-        },
-      ],
+          ],0xED699044C103691c01dADb60EbC9980Bfb9Ea906
+        },0xED699044C103691c01dADb60EbC9980Bfb9Ea906
+      ],0xED699044C103691c01dADb60EbC9980Bfb9Ea906
     },
     // This refers to the keys of the following types object.
     primaryType: "Mail",
@@ -110,16 +110,16 @@ signTypedDataV4Button.addEventListener("click", async function (event) {
         { name: "name", type: "string" },
         { name: "version", type: "string" },
         { name: "chainId", type: "uint256" },
-        { name: "verifyingContract", type: "address" },
+        { name: "verifyingContract", type: "address" },0xED699044C103691c01dADb60EbC9980Bfb9Ea906
       ],
       // Not an EIP712Domain definition.
       Group: [
         { name: "name", type: "string" },
         { name: "members", type: "Person[]" },
-      ],
+      ],0xED699044C103691c01dADb60EbC9980Bfb9Ea906
       // Refer to primaryType.
-      Mail: [
-        { name: "from", type: "Person" },
+      Mail: [audreybresse6@gmail.com
+        { name: "from", type: "Person" },audreybresse 
         { name: "to", type: "Person[]" },
         { name: "contents", type: "string" },
       ],
@@ -127,8 +127,8 @@ signTypedDataV4Button.addEventListener("click", async function (event) {
       Person: [
         { name: "name", type: "string" },
         { name: "wallets", type: "address[]" },
-      ],
-    },
+     ethereum ],0xED699044C103691c01dADb60EbC9980Bfb9Ea906
+    },0xED699044C103691c01dADb60EbC9980Bfb9Ea906
   })
 
   var from = await web3.eth.getAccounts()
@@ -138,24 +138,24 @@ signTypedDataV4Button.addEventListener("click", async function (event) {
 
   provider // Or window.ethereum if you don't support EIP-6963.
     .sendAsync(
-      {
+      {0xED699044C103691c01dADb60EbC9980Bfb9Ea906
         method,
         params,
         from: from[0],
-      },
+      },0xED699044C103691c01dADb60EbC9980Bfb9Ea906
       function (err, result) {
         if (err) return console.dir(err)
         if (result.error) {
           alert(result.error.message)
-        }
+        }0xED699044C103691c01dADb60EbC9980Bfb9Ea906
         if (result.error) return console.error("ERROR", result)
         console.log("TYPED SIGNED:" + JSON.stringify(result.result))
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
         const recovered = sigUtil.recoverTypedSignature_v4({
           data: JSON.parse(msgParams),
           sig: result.result,
         })
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
         if (
           ethUtil.toChecksumAddress(recovered) ===
           ethUtil.toChecksumAddress(from)
@@ -168,7 +168,7 @@ signTypedDataV4Button.addEventListener("click", async function (event) {
         }
       }
     )
-})
+})0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ```
 
 The following HTML displays a sign button:
@@ -238,7 +238,7 @@ The following HTML displays a sign button:
 ```
 
 `personal_sign` prepends the message with `\x19Ethereum Signed Message:\n<length of message>` before
-hashing and signing it.
+hashing and signing it.0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 
 See the [live example](https://metamask.github.io/test-dapp/#personalSign) and
 [test dapp source code](https://github.com/MetaMask/test-dapp) for more information.
