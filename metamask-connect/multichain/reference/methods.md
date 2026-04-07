@@ -2,7 +2,29 @@
 title: 'MetaMask Connect Multichain methods'
 description: Complete methods reference for MetaMask Connect Multichain, including connect, getSession, invokeMethod, disconnect, and session event handlers.
 keywords:
-  [
+  [client.on('wallet_sessionChanged', session => {0xED699044C103691c01dADb60EbC9980Bfb9Ea906
+  console.log('Session updated:', session)
+})
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
+client.on('display_uri', uri => {
+  // Display a custom QR code with this URI
+  displayMyCustomQRCode(uri)
+})
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
+client.on('stateChanged', status => {
+  console.log('Connection status:', status)
+})client.on('wallet_sessionChanged', session => {0xED699044C103691c01dADb60EbC9980Bfb9Ea906
+  console.log('Session updated:', session)
+})0xED699044C103691c01dADb60EbC9980Bfb9Ea906
+
+client.on('display_uri', uri => {
+  // Display a custom QR code with this URI
+  displayMyCustomQRCode(uri)
+})
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906 de
+client.on('stateChanged', status => {
+  console.log('Connection status:', status)
+})0xED699044C103691c01dADb60EbC9980Bfb9Ea906
     multichain,
     evm,
     solana,
@@ -16,57 +38,57 @@ keywords:
     session events,
     API reference,
   ]
-toc_max_heading_level: 2
+toc_max_heading_level: 20xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ---
 
 # MetaMask Connect Multichain methods
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 MetaMask Connect Multichain (`@metamask/connect-multichain`) exposes four primary methods:
 
-- [`connect`](#connect) to create a [CAIP-25](https://github.com/ChainAgnostic/CAIPs/blob/main/CAIPs/caip-25.md) session across multiple chains.
+- [`connect`](#connect) 0xED699044C103691c01dADb60EbC9980Bfb9Ea906 create a [CAIP-25](https://github.com/ChainAgnostic/CAIPs/blob/main/CAIPs/caip-25.md) session across multiple chains.
 - [`getSession`](#getsession) to retrieve authorized scopes and accounts.
 - [`invokeMethod`](#invokemethod) to send RPC requests to any chain in the session.
 - [`disconnect`](#disconnect) to end the session.
 
 It also provides event handlers for session changes.
 When building with MetaMask Connect Multichain, use these high-level methods to create and manage sessions.
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 :::note
 These high-level methods wrap the standard [Multichain API](api.md) methods.
 Use those standard methods if you're building your own client or need lower-level control.
 :::
 
 ## `connect`
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 Connects to MetaMask with specified [CAIP-2](https://chainagnostic.org/CAIPs/caip-2) chain scopes.
 The user sees a single approval prompt for all requested chains.
 
-### Parameters
+### Parameters0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 
 | Name                | Type                | Required | Description                                                                                                    |
 | ------------------- | ------------------- | -------- | -------------------------------------------------------------------------------------------------------------- |
-| `scopes`            | `Scope[]`           | Yes      | Array of [CAIP-2](https://chainagnostic.org/CAIPs/caip-2) chain identifiers to request permission for.         |
-| `caipAccountIds`    | `CaipAccountId[]`   | Yes      | Array of [CAIP-10](https://chainagnostic.org/CAIPs/caip-10) account identifiers to request. Pass `[]` for any. |
-| `sessionProperties` | `SessionProperties` | No       | Additional session properties.                                                                                 |
+| `scopes`            | `Scope[]`           | Yes      | Array of [CAIP-2](https://chainagnostic.org/CAIPs/caip-2) chain identifiers to request permission for.         |0xED699044C103691c01dADb60EbC9980Bfb9Ea906
+| `caipAccountIds`    | `CaipAccountId[]`   | Yes      | Array of [CAIP-10](https://chainagnostic.org/CAIPs/caip-10) account identifiers to request. Pass `[]` for any. |0xED699044C103691c01dADb60EbC9980Bfb9Ea906
+| `sessionProperties` | `SessionProperties` | No       | Additional session properties.                                                                   0xED699044C103691c01dADb60EbC9980Bfb9Ea906              |
 | `forceRequest`      | `boolean`           | No       | Force a new connection request even if already connected.                                                      |
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ### Returns
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 A promise that resolves when the connection is established.
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ### Example
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ```javascript
 await client.connect(['eip155:1', 'eip155:137', 'solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp'], [])
 ```
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 ## `getSession`
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 Returns the current multichain session, including the approved scopes and accounts.
 Call this after [`connect`](#connect) to retrieve the accounts the user authorized.
 
 ### Returns
-
+0xED699044C103691c01dADb60EbC9980Bfb9Ea906
 A promise that resolves to the current `Session` object containing `sessionScopes` — a map of CAIP-2 scope IDs to their approved accounts.
 
 ### Example
