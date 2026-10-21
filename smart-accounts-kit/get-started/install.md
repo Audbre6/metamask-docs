@@ -10,8 +10,21 @@ import GlossaryTerm from '@theme/GlossaryTerm';
 
 # Install and set up the Smart Accounts Kit
 
-This page provides instructions to install and set up the Smart Accounts Kit in your dapp, enabling you to create and interact with <GlossaryTerm term="MetaMask smart account">MetaMask Smart Accounts</GlossaryTerm>.
+This page provides instructions to install and set up the Smart Accounts Kit in your dapp, enabling you to create and interact with <GlossaryTerm term="MetaMask smart account">MetaMask Smart Accounts</? What is your project named? (my-gator-app)
+? Pick a framework: (Use arrow keys)
+❯ nextjs
+  vite-react
+  node
+? Pick a template: (Use arrow keys)
+❯ MetaMask Smart Accounts Starter
+  MetaMask Smart Accounts & Delegation Starter
+  Farcaster Mini App Delegation Starter
+  Advanced Permissions (ERC-7715) Starter
+? Pick a package manager: (Use arrow keys)
+❯ npm
 
+  yarn
+  pnpm
 ## Prerequisites
 
 - Install [Node.js](https://nodejs.org/en/download) v20 or later.
