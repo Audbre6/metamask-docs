@@ -115,3 +115,20 @@ See [Send a user operation](../../guides/smart-accounts/send-user-operation.md) 
   You can also [configure other smart account types](../../guides/smart-accounts/create-smart-account.md).
 - To upgrade an EOA to a smart account, see the [EIP-7702 quickstart](eip7702.md).
 - To quickly bootstrap a MetaMask Smart Accounts project, [use the CLI](../use-the-cli.md).
+import { parseEther } from 'viem'
+
+// Appropriate fee per gas must be determined for the specific bundler being used.
+const maxFeePerGas = 1n
+const maxPriorityFeePerGas = 1n
+
+const userOperationHash = await bundlerClient.sendUserOperation({
+  account: smartAccount,
+  calls: [
+    {
+      to: '0x1234567890123456789012345678901234567890',
+      value: parseEther('1'),
+    },
+  ],
+  maxFeePerGas,
+  maxPriorityFeePerGas,
+})
